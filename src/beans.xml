@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.springframework.org/schema/beans"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<bean id = "chinese" class = "com.springstudy.ioc.Chinese">
+		<!-- 驱动Chinese去调用setAxe(),并将stoneAxe实例作为入参 -->
+		<!-- <property name = "axe" ref = "stoneaxe">
+		</property> -->
+		<constructor-arg ref = "stoneaxe"></constructor-arg>
+	</bean>
+	<bean id = "stoneaxe" class = "com.springstudy.ioc.StoneAxe">
+	</bean>
+</beans>
