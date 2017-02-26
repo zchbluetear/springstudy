@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.springframework.org/schema/beans"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<!-- 将监听器注册到容器中 -->
+	<bean class = "com.springstudy.eventListener.EmailListener"></bean>
+	<!--将事件交给容器来打理-->
+	<bean id = "emailevent" class = "com.springstudy.eventListener.EmailEvent">
+		<constructor-arg value = "test"></constructor-arg>
+		<constructor-arg value = "1424490125@qq.com"></constructor-arg>
+		<constructor-arg value = "this is a emailevent"></constructor-arg>
+	</bean>
+</beans>
