@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.springframework.org/schema/beans"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<!-- <bean id = "chinese" class = "com.springstudy.bean.Chinese">
+		<property name = "name" value = "张三" ></property>
+		<property name = "color" value = "黑色"></property>
+	</bean>
+	<bean id = "american" class = "com.springstudy.bean.American">
+		<property name = "name" value = "Tom" ></property>
+		<property name = "color" value = "黄色"></property>
+	</bean> -->
+	<!--		Chinese 和 American具有公共的属性  -->
+	<bean id = "abstractBean" class = "com.springstudy.bean.AbstractBean" abstract = "true">
+		<property name = "name" value = "人类" ></property>
+		<property name = "color" value = "毛发颜色"></property>
+	</bean>
+	<bean id = "chinese" parent = "abstractBean" class = "com.springstudy.bean.Chinese">
+	</bean>
+	<bean id = "american" parent = "abstractBean" class = "com.springstudy.bean.American">
+	</bean> 
+</beans>
